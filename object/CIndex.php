@@ -7,7 +7,9 @@ class CIndex
 
     public function __destruct()
     {
-        $this->mysql->close();
+        if($this->mysql) {
+            $this->mysql->close();
+        }
     }
 
     /**

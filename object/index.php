@@ -5,11 +5,11 @@ header('Content-Type: application/json');
 
 $ci = new CIndex();
 if(!$ci->router()) {
-    die('{"result": "error"}');
+    exit('{"result": "error"}');
 }
 
 if(!$ci->prepare_data()) {
-    die('{"result": "error"}');
+    exit('{"result": "error"}');
 }
 
 if($_SERVER['REQUEST_METHOD'] === 'GET') {
