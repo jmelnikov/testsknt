@@ -56,13 +56,13 @@ else if ($uri[4] === 'tarif' && $_SERVER['REQUEST_METHOD'] === 'PUT') {
     $data = json_decode($put, true);
 
     // Если не указан новый ID тарифа
-    if(empty($data['tarif_id'])) {
+    if (empty($data['tarif_id'])) {
         die('{"result": "error"}');
     }
 
     // Ищем тариф среди выбранного списка
     foreach ($tarifs as $tarif) {
-        if($tarif['id'] == $data['tarif_id']) {
+        if ($tarif['id'] == $data['tarif_id']) {
             $setTarif = $tarif;
         }
     }
